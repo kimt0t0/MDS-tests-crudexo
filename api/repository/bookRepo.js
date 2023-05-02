@@ -1,8 +1,9 @@
 
 export default (Book) => {
   const books = [
-    new Book('9782744005084', 'UML et C++', 'Richard C. Lee, William M. Tepfenhart', 'CampusPress', 'FR', 29.95),
-    new Book('9782746035966', 'Cree su primer sitio web con dreamweaver 8', 'B.A. GUERIN', 'ENI', 'ES', 10.02)
+    new Book('9782744005084', 'Pets and Magic', 'Random first author', 'CampusPress', 'EN', 29.95),
+    new Book('9782746035966', 'Hidden Daggers and Great Misfits', 'Random second author', 'ENI', 'ES', 10.02),
+    new Book('1611213161161', 'A la recherche de la date perdue', 'Random third author', 'EN', 'ES', 5)
   ];
 
   const listBooks = () => {

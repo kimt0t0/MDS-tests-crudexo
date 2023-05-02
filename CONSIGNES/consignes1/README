@@ -12,10 +12,10 @@ This project is made for pedagogic purposes.
 
 3. Add users mocks to fit your tests (ok)
 
-4. Create the /users CRUD
+4. Create the /users CRUD (ok)
    TIP : Get inspired with the /books one
 
-IMPORTANT : Règles métier à prendre en compte
+IMPORTANT : Règles métier à prendre en compte (oublié, à récupérer quand le reste sera fait si temps)
 
 - L'identifiant, de type UUID, sera généré aléatoirement côté backend
 - Date (format anglais uniquement) : YYYY-MM-DD
