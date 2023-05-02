@@ -67,7 +67,7 @@ describe('Users', function() {
     // it('GET /users/:id should return a success response with found user', function(done) {
     //     chai.request(api)
     //     .get('/users/0123456789')
-    //     .send((_, res) => {
+    //     .end((_, res) => {
     //         chai.expect(res.statusCode).to.equal(200);
     //         chai.expect(res.body).to.deep.equal({
     //             data: {
@@ -86,7 +86,7 @@ describe('Users', function() {
     // it('GET /users/:id should return not found response if the user does not exist', function (done) {
     //     chai.request(api)
     //     .get('/users/0011223355')
-    //     .send((_, res) => {
+    //     .end((_, res) => {
     //         chai.expect(res.statusCode).to.equal(404);
     //         chai.expect(res.body).to.deep.equal({
     //             error: 'User 0011223355 not found'
