@@ -10,20 +10,61 @@ export default (User) => {
 
     const createUser = (user) => {
         users.push(new User(
-            user.id = id,
-            user.lastName = lastName,
-            user.firstName = firstName,
-            user.birthDate = birthDate,
-            user.address = address,
-            user.phone = phone,
-            user.email = email
+            user.id,
+            user.lastName,
+            user.firstName,
+            user.birthDate,
+            user.address,
+            user.phone,
+            user.email
         ));
         return user;
-    }
+    };
+
+    const findUser = (id) => {
+        return users.find((user) => user.id === id);
+    };
+
+    const updateUser = (id, user) => {
+        let foundUserIdx = '';
+        users.forEach((user, idx) => {
+            if (user.id === id) {
+                foundUserIdx = idx;
+            }
+        });
+
+        if (foundUserIdx !== '') {
+            users[foundUserIdx] = new User(
+                user.id,
+            user.lastName,
+            user.firstName,
+            user.birthDate,
+            user.address,
+            user.phone,
+            user.email
+            );
+            return user;
+        }
+        return null;
+    };
+
+    const deleteUser = (id) => {
+        let deletedUser = null;
+        users.forEach((user, idx) => {
+            if (user.id === id) {
+                deletedUser = Object.assign({}, user);
+                users.splice(idx, 1);
+            }
+        });
+        return deletedUser;
+    };
 
     return {
         listUsers,
-        createUser
+        createUser,
+        findUser,
+        updateUser,
+        deleteUser
     }
 
 }

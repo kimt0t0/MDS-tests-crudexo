@@ -7,7 +7,7 @@ export default class User {
    * @param {String} lastName - Nom de famille
    * @param {String} firstName - Prénom
    * @param {String} birthDate - Date de naissance utilisateurice
-   * @param {Int} address - Adresse postale utilisateurice
+   * @param {String} address - Adresse postale utilisateurice
    * @param {String} phone - Téléphone utilisateurice
    * @param {String} email - Email utilisateurice
    */
