@@ -4,7 +4,7 @@ export default (bookRepo) => {
     res.send({
       data: bookRepo.listBooks()
     });
-  };
+  }
 
   const createBook = (req, res) => {
     const book = bookRepo.createBook(req.body);
