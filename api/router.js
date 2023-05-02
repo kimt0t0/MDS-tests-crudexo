@@ -9,6 +9,9 @@ export default (controlers, app) => {
   // Booking Routes
   app.get('/bookings', controlers.bookingCtrl.listBookings);
   app.post('/bookings', controlers.bookingCtrl.createBooking);
+  app.get('/bookings/:id', controlers.bookingCtrl.getBooking);
+  app.put('/bookings/:id', controlers.bookingCtrl.updateBooking);
+  app.delete('/bookings/:id', controlers.bookingCtrl.deleteBooking);
   // Users Routes
   app.get('/users', controlers.userCtrl.listUsers);
   app.post('/users', controlers.userCtrl.createUser);

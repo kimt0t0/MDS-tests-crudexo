@@ -18,10 +18,50 @@ export default (Booking) => {
             booking.user
         ));
         return booking;
-    }
+    };
+
+    const findBooking = (id) => {
+        return bookings.find((booking) => booking.id === id);
+    };
+
+    const updateBooking = (id, booking) => {
+        let foundBookingIdx = '';
+        bookings.forEach((booking, idx) => {
+            if (booking.id === id) {
+                foundBookingIdx = idx;
+            }
+        });
+
+        if (foundBookingIdx !== '') {
+            bookings[foundBookingIdx] = new Booking(
+                booking.id,
+                booking.rentDate,
+                booking.returnDate,
+                booking.book,
+                booking.user
+            );
+            return booking;
+        }
+
+        return null;
+    };
+
+    const deleteBooking = (id) => {
+        let deletedBooking = null;
+        bookings.forEach((booking, idx) => {
+            if (booking.id === id) {
+                deletedBooking = Object.assign({}, booking);
+                bookings.splice(idx, 1);
+            }
+        });
+        return deletedBooking;
+    };
 
     return {
         listBookings,
-        createBooking
+        createBooking,
+        findBooking,
+        updateBooking,
+        deleteBooking
     };
 }
