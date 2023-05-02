@@ -6,8 +6,8 @@ export default class Booking {
    * @param {String} id         - Identifiant de la location
    * @param {String} rentDate   - Date de location
    * @param {String} returnDate - Date de retour
-   * @param {Book}   book       - Elément loué
-   * @param {User}   user       - Utilisateur qui loue l'élément
+   * @param {String}   book       - Elément loué, book id
+   * @param {String}   user       - Utilisateur qui loue l'élément, user id
    */
   constructor(id, rentDate, returnDate, book, user) {
     this.id         = id;
@@ -17,4 +17,3 @@ export default class Booking {
     this.user       = user;
   }
 }
--

@@ -16,19 +16,27 @@ describe('Books', function () {
         data: [
           {
             isbn13: '9782744005084',
-            title: 'UML et C++',
-            authors: 'Richard C. Lee, William M. Tepfenhart',
+            title: 'Pets and Magic',
+            authors: 'Random first author',
             editor: 'CampusPress',
-            langCode: 'FR',
+            langCode: 'EN',
             price: 29.95
           },
           {
             isbn13: '9782746035966',
-            title: 'Cree su primer sitio web con dreamweaver 8',
-            authors: 'B.A. GUERIN',
+            title: 'Hidden Daggers and Great Misfits',
+            authors: 'Random second author',
             editor: 'ENI',
             langCode: 'ES',
             price: 10.02
+          },
+          {
+            isbn13: '1611213161161',
+            title: 'A la recherche de la date perdue',
+            authors: 'Random third author',
+            editor: 'EN',
+            langCode: 'ES',
+            price: 5
           }
         ]
       });
@@ -60,17 +68,17 @@ describe('Books', function () {
   it('POST /books should return a bad request if lang code malformed');
   it('GET /books/:id should return a success response with found book', function (done) {
     chai.request(api)
-    .get('/books/9782746035966')
+    .get('/books/9782744005084')
     .end((_, res) => {
       chai.expect(res.statusCode).to.equal(200);
       chai.expect(res.body).to.deep.equal({
         data: {
-          isbn13: '9782746035966',
-          title: 'Cree su primer sitio web con dreamweaver 8',
-          authors: 'B.A. GUERIN',
-          editor: 'ENI',
-          langCode: 'ES',
-          price: 10.02
+          isbn13: '9782744005084',
+          title: 'Pets and Magic',
+          authors: 'Random first author',
+          editor: 'CampusPress',
+          langCode: 'EN',
+          price: 29.95
         }
       });
       done();
@@ -90,11 +98,11 @@ describe('Books', function () {
   it('PUT /books/:id should return a success response with found book', function (done) {
     const book = {
       isbn13: '9782746035966',
-      title: 'Cree su primer sitio web con dreamweaver 8',
-      authors: 'B.A. GUERIN',
+      title: 'Hidden Daggers and Great Misfits',
+      authors: 'Awesome second author',
       editor: 'ENI',
       langCode: 'ES',
-      price: 15.78
+      price: 10.02
     };
     chai.request(api)
     .put('/books/9782746035966')
@@ -104,11 +112,11 @@ describe('Books', function () {
       chai.expect(res.body).to.deep.equal({
         data: {
           isbn13: '9782746035966',
-          title: 'Cree su primer sitio web con dreamweaver 8',
-          authors: 'B.A. GUERIN',
+          title: 'Hidden Daggers and Great Misfits',
+          authors: 'Awesome second author',
           editor: 'ENI',
           langCode: 'ES',
-          price: 15.78
+          price: 10.02
         }
       });
       done();
@@ -146,11 +154,11 @@ describe('Books', function () {
         meta: {
           _deleted: {
             isbn13: '9782744005084',
-            title: 'UML et C++',
-            authors: 'Richard C. Lee, William M. Tepfenhart',
-            editor: 'CampusPress',
-            langCode: 'FR',
-            price: 29.95
+          title: 'Pets and Magic',
+          authors: 'Random first author',
+          editor: 'CampusPress',
+          langCode: 'EN',
+          price: 29.95
           }
         }
       });
