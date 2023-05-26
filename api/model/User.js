@@ -3,7 +3,7 @@ export default class User {
    * Constructeur
    * @constructor
    *
-   * @param {String} id - Id
+   * @param {Number} id - Id
    * @param {String} lastName - Nom de famille
    * @param {String} firstName - Prénom
    * @param {String} birthDate - Date de naissance utilisateurice
